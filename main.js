@@ -56,8 +56,34 @@ ScrollReveal({
         backDelay: 1000,
         loop: true,
     });
+    /* */
+    const form = document.querySelector('form');
+    const fullName = document.getElementById('name');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('nom');
+    const subject = document.getElementById('sub');
+    const msg = document.getElementById('msg');
 
+    function sendEmail() {
+        const bodyMessage = 'Full Name: ${fullName.value}<br> Email: ${email.value}<br> Phone Number: ${phone.value}<br> Message: ${mess.value}';
 
+        Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "vinisha.rathod.000@gmail.com",
+            Password : "8FBBEE7D95025CBFF16389EEA7BFD5964757",
+            To : 'vinisha.rathod.000@gmail.com',
+            From : "you@isp.com",
+            Subject : subject.value,
+            Body : bodyMessage
+        }).then(
+          message => alert(message)
+        );
+    }
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        sendEmail();
+    });
     /* */
     document.addEventListener("DOMContentLoaded", function() {
         const navbarLinks = document.querySelectorAll(".navbar a");

@@ -52,7 +52,7 @@
     </div>
 
     <div class="about-content">
-      <h2 class="heading">About<span>Me</span></h2>
+      <h2 class="heading">About<span> Me</span></h2>
       <h3>Fullstack Developer</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ut eius animi iusto beatae odio hic officia ipsam minima odit.</p>
       <a href="#" class="btn">Read more</a>
@@ -65,24 +65,24 @@
 
     <div class="services-container">
       <div class="services-box">
-        <i class="fa-solid fa-code first"></i>
+        <i class="fa-solid fa-code srvc"></i>
         <h3>Web Development</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vero quidem aspernatur impedit modi debitis ducimus quisquam fugit mollitia, dolorem veritatis ipsum excepturi consectetur dolore numquam sint, eveniet voluptate dignissimos?</p>
         <a href="#" class="btn">Read More</a>
       </div>
 
       <div class="services-box">
-        <i class="fa-solid fa-mobile second"></i>
+        <i class="fa-solid fa-mobile srvc"></i>
         <h3>Mobile App Development</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vero quidem aspernatur impedit modi debitis ducimus quisquam fugit mollitia, dolorem veritatis ipsum excepturi consectetur dolore numquam sint, eveniet voluptate dignissimos?</p>
         <a href="#" class="btn">Read More</a>
       </div>
 
       <div class="services-box">
-        <i class="fa-solid fa-palette third"></i>
+        <i class="fa-solid fa-palette srvc"></i>
         <h3> Custom App Development and Automation</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vero quidem aspernatur impedit modi debitis ducimus quisquam fugit mollitia, dolorem veritatis ipsum excepturi consectetur dolore numquam sint, eveniet voluptate dignissimos?</p>
-        <a href="#" class="btn excep">Read More</a>
+        <a href="#" class="btn">Read More</a>
       </div>
 
     </div>
@@ -90,7 +90,7 @@
 
   <!--Portfolio Section Design-->
   <section class="portfolio" id="portfolio">
-    <h2 class="heading">Latest <span>Projects</span></h2>
+    <h2 class="heading">Latest <span> Projects</span></h2>
 
     <div class="portfolio-container">
       <div class="portfolio-box">
@@ -155,17 +155,19 @@
 
     <form action="#">
       <div class="input-box">
-        <input type="text" placeholder="Full Name">
-        <input type="email" placeholder="Email Address">
+        <input type="text" placeholder="Full Name" id="name" class="item" autocomplete="off" >
+        <input type="email" placeholder="Email Address"
+        id="email" class="item" autocomplete="off">
       </div>
 
       <div class="input-box">
-          <input type="number" placeholder="Mobile Number">
-          <input type="text" placeholder="Email Subject">
+          <input type="number" placeholder="Mobile Number" id="nom" class="item" autocomplete="off">
+          <input type="text" placeholder="Email Subject"
+          id="sub" class="item" autocomplete="off">
       </div>
 
-        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"> </textarea>
-        <input type="submit" value="Send Message" class="btn">
+        <textarea name="" id="msg" cols="30" rows="10" placeholder="Your Message"> </textarea>
+        <button type="submit" class="btn">Send Message</button>
     </form>
   </section>
 
@@ -185,8 +187,9 @@
 
   <!--typed Reveal jS-->
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  
-
+  <!--Smtpjs.com-->
+  <script src="https://smtpjs.com/v3/smtp.js">
+  </script>
   <!--Main JS-->
   <script src="JS/main.js"></script>
 </body>
