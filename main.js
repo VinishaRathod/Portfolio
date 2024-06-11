@@ -57,33 +57,66 @@ ScrollReveal({
         loop: true,
     });
     /* */
-    const form = document.querySelector('form');
-    const fullName = document.getElementById('name');
-    const email = document.getElementById('email');
-    const phone = document.getElementById('nom');
-    const subject = document.getElementById('sub');
-    const msg = document.getElementById('msg');
+    // const form = document.querySelector('form');
+    // const fullName = document.getElementById('name');
+    // const email = document.getElementById('email');
+    // const phone = document.getElementById('nom');
+    // const subject = document.getElementById('sub');
+    // const msg = document.getElementById('msg');
 
-    function sendEmail() {
-        const bodyMessage = 'Full Name: ${fullName.value}<br> Email: ${email.value}<br> Phone Number: ${phone.value}<br> Message: ${mess.value}';
+    // function sendEmail() {
+    //     const bodyMessage = 'Full Name: ${fullName.value}<br> Email: ${email.value}<br> Phone Number: ${phone.value}<br> Message: ${mess.value}';
 
+    //     Email.send({
+    //         Host : "smtp.elasticemail.com",
+    //         Username : "vinisha.rathod.000@gmail.com",
+    //         Password : "8FBBEE7D95025CBFF16389EEA7BFD5964757",
+    //         To : 'vinisha.rathod.000@gmail.com',
+    //         From : "you@isp.com",
+    //         Subject : subject.value,
+    //         Body : bodyMessage
+    //     }).then(
+    //       message => alert(message)
+    //     );
+    // }
+
+    // form.addEventListener("submit", (e) => {
+    //     e.preventDefault();
+    //     sendEmail();
+    // });
+
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+    
+        // Get form input values
+        const fullName = document.getElementById('name').value;
+        const emailAddress = document.getElementById('email').value;
+        const phoneNumber = document.getElementById('nom').value;
+        const emailSubject = document.getElementById('sub').value;
+        const message = document.getElementById('msg').value;
+    
+        // Construct email body message
+        const bodyMessage = `Full Name: ${fullName}<br>Email: ${emailAddress}<br>Phone Number: ${phoneNumber}<br>Message: ${message}`;
+    
+        // Send email using Email.js
         Email.send({
-            Host : "smtp.elasticemail.com",
-            Username : "vinisha.rathod.000@gmail.com",
-            Password : "8FBBEE7D95025CBFF16389EEA7BFD5964757",
-            To : 'vinisha.rathod.000@gmail.com',
-            From : "you@isp.com",
-            Subject : subject.value,
-            Body : bodyMessage
-        }).then(
-          message => alert(message)
-        );
-    }
-
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        sendEmail();
+            Host: "smtp.elasticemail.com",
+            Username: "vinisha.rathod.000@gmail.com", // Your Elastic Email username
+            Password: "8FBBEE7D95025CBFF16389EEA7BFD5964757", // Your Elastic Email password
+            To: "vinisha.rathod.000@gmail.com", // Recipient email address
+            From: emailAddress,
+            Subject: emailSubject,
+            Body: bodyMessage,
+        }).then(function(message) {
+            alert("Email sent successfully!");
+        }).catch(function(error) {
+            console.error(error.message);
+            alert("An error occurred while sending the email. Please try again later.");
+        });
     });
+    
+
+
     /* */
     document.addEventListener("DOMContentLoaded", function() {
         const navbarLinks = document.querySelectorAll(".navbar a");
