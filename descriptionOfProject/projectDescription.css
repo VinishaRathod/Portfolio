@@ -1,0 +1,32 @@
+html {
+    min-height: 100%;
+ }
+body{
+    background-image: url("../images/projectdescriptionbgimg.webp");
+    background-size:cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+div h2{
+    margin: 5% auto;
+    padding: 0.2%;
+    text-align: center;
+    border-radius: 7px;
+    width: 35%;
+    background: linear-gradient(to bottom , rgb(246,231,87), darkgreen);
+
+}
+div h3{
+    color: darkgreen;
+    padding-left: 5%;
+}
+div p{
+    padding-left: 5%;
+
+}
+@media screen and (max-width: 764px){
+    div h2{
+    font-size:1rem;
+    padding:1.5%;
+    }
+}

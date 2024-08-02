@@ -3,11 +3,11 @@ let newIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
 newIcon.onclick = () => {
-    newIconIcon.classList.toggle('fa-xmark');
+    newIcon.classList.toggle('fa-xmark');
     navbar.classList.toggle('active');
 }
 
-/* */
+/* On Scrolling nav Links wil be active automatically  */
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
@@ -26,12 +26,11 @@ window.onscroll = () => {
         };
     });
 
-
-    /* */
+    
     let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 100);
 
-    /* */
+    
     newIcon.classList.remove('fa-xmark');
     navbar.classList.remove('active');
 };
@@ -44,13 +43,13 @@ ScrollReveal({
     });
 
     ScrollReveal().reveal('.home-content, heading', {origin: 'top'});
-    ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', {origin: 'buttom'});
+    ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', {origin: 'bottom'});
     ScrollReveal().reveal('.home-contact h1, .about-img', {origin: 'left'});
     ScrollReveal().reveal('.home-contact p, .about-content', {origin: 'right'});
 
     /* */
     const typed = new Typed('.multiple-text', {
-        strings: ['Full Stack developer' , 'Web Designer'],
+        strings: ['MERN Stack Developer','React Developer', 'Frontend Developer','Web Developer','Full Stack developer' , 'Java Developer'],
         typeSpeed: 70,
         backSpeed: 70,
         backDelay: 1000,
@@ -85,57 +84,56 @@ ScrollReveal({
     //     sendEmail();
     // });
 
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent default form submission
+    //     document.getElementById("contact-form").addEventListener("submit", function(event) {
+    //     event.preventDefault(); // Prevent default form submission
     
-        // Get form input values
-        const fullName = document.getElementById('name').value;
-        const emailAddress = document.getElementById('email').value;
-        const phoneNumber = document.getElementById('nom').value;
-        const emailSubject = document.getElementById('sub').value;
-        const message = document.getElementById('msg').value;
+    //     // Get form input values
+    //     const fullName = document.getElementById('name').value;
+    //     const emailAddress = document.getElementById('email').value;
+    //     const phoneNumber = document.getElementById('nom').value;
+    //     const emailSubject = document.getElementById('sub').value;
+    //     const message = document.getElementById('msg').value;
     
-        // Construct email body message
-        const bodyMessage = `Full Name: ${fullName}<br>Email: ${emailAddress}<br>Phone Number: ${phoneNumber}<br>Message: ${message}`;
+    //     // Construct email body message
+    //     const bodyMessage = `Full Name: ${fullName}<br>Email: ${emailAddress}<br>Phone Number: ${phoneNumber}<br>Message: ${message}`;
     
-        // Send email using Email.js
-        Email.send({
-            Host: "smtp.elasticemail.com",
-            Username: "vinisha.rathod.000@gmail.com", // Your Elastic Email username
-            Password: "8FBBEE7D95025CBFF16389EEA7BFD5964757", // Your Elastic Email password
-            To: "vinisha.rathod.000@gmail.com", // Recipient email address
-            From: emailAddress,
-            Subject: emailSubject,
-            Body: bodyMessage,
-        }).then(function(message) {
-            alert("Email sent successfully!");
-        }).catch(function(error) {
-            console.error(error.message);
-            alert("An error occurred while sending the email. Please try again later.");
-        });
-    });
+    //     // Send email using Email.js
+    //     Email.send({
+    //         Host: "smtp.elasticemail.com",
+    //         Username: "vinisha.rathod.000@gmail.com", // Your Elastic Email username
+    //         Password: "8FBBEE7D95025CBFF16389EEA7BFD5964757", // Your Elastic Email password
+    //         To: "vinisha.rathod.000@gmail.com", // Recipient email address
+    //         From: emailAddress,
+    //         Subject: emailSubject,
+    //         Body: bodyMessage,
+    //     }).then(function(message) {
+    //         alert("Email sent successfully!");
+    //     }).catch(function(error) {
+    //         console.error(error.message);
+    //         alert("An error occurred while sending the email. Please try again later.");
+    //     });
+    // });
     
 
+    function handleFormSubmit(event) {
+        // event.preventDefault(); // Prevent default form submission
 
-    /* */
-    document.addEventListener("DOMContentLoaded", function() {
-        const navbarLinks = document.querySelectorAll(".navbar a");
-    
-        navbarLinks.forEach(function(link) {
-            link.addEventListener("click", function(event) {
-                // Prevent default link behavior
-                event.preventDefault();
-    
-                // Remove "active" class from all links
-                navbarLinks.forEach(function(link) {
-                    link.classList.remove("active");
-                });
-    
-                // Add "active" class to the clicked link
-                this.classList.add("active");
-            });
+        // Create a FormData object from the form
+        const form = document.getElementById('contact-form');
+        const formData = new FormData(form);
+
+        // Log each field's data
+        formData.forEach((value, key) => {
+            console.log(key + ': ' + value);
         });
-    });
+
+        // Reset the form
+        form.reset();
+        
+        alert('Form data has been logged and form has been reset.');
+    }
+
+
     
       
     
